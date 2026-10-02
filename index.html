@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>בת המצווה של נגה ואלה</title>
+<meta name="description" content="אישור הגעה לבת המצווה של נגה ואלה פוקס · יום רביעי 14.10.2026, 19:00 · החצר האחורית, הוד השרון">
+<meta property="og:title" content="בת המצווה של נגה ואלה 💜">
+<meta property="og:description" content="יום רביעי 14.10.2026 · 19:00 · החצר האחורית, הוד השרון · נשמח שתאשרו הגעה">
+<meta property="og:image" content="invite-pic.jpeg">
+<meta name="theme-color" content="#f6efe3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Assistant:wght@400;600;700&family=Great+Vibes&display=swap">
+<style>
+/* Layout: one narrow paper column, like the invitation card itself — picture, details, then the RSVP slip */
+:root{
+  --paper:#fbf7ef;      /* card paper */
+  --ground:#efe6d6;     /* table the card sits on */
+  --ink:#3a2f26;        /* dark brown text, as on the invite */
+  --muted:#7c6d5d;
+  --gold:#b08d4c;       /* foil gold */
+  --gold-soft:#e8dcc2;
+  --ok:#5f7f4f; --no:#a0574a; --maybe:#b08d4c;
+  --f-display:"Frank Ruhl Libre","David Libre",Georgia,serif;
+  --f-body:"Assistant","Segoe UI",Arial,sans-serif;
+  --f-script:"Great Vibes","Brush Script MT",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--ground)}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 17px/1.6 var(--f-body);
+  padding-block:max(16px,env(safe-area-inset-top)) max(24px,env(safe-area-inset-bottom));padding-inline:16px}
+img{max-width:100%;display:block}
+.card{max-width:520px;margin:0 auto;background:var(--paper);border-radius:6px;
+  box-shadow:0 1px 0 #fff inset,0 10px 30px rgba(90,70,40,.12);overflow:hidden}
+.top{text-align:center;padding:22px 20px 14px}
+.top .script{font:400 2.4rem/1 var(--f-script);color:var(--gold)}
+.top .eyebrow{font-size:.8rem;letter-spacing:.35em;color:var(--muted);margin-top:6px}
+.photo{border-top:1px solid var(--gold-soft);border-bottom:1px solid var(--gold-soft)}
+.photo img{width:100%;height:auto}
+.text{text-align:center;padding:26px 22px 8px}
+.text h1{font:700 1.7rem/1.25 var(--f-display);margin:0 0 6px;text-wrap:balance}
+.text .lead{margin:0 0 18px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:1fr 1px 1fr;gap:0 14px;align-items:center;margin:0 auto 18px;max-width:400px}
+.facts .rule{background:var(--gold-soft);height:100%}
+.fact .lbl{font-size:.75rem;letter-spacing:.3em;color:var(--gold)}
+.fact .big{font:700 1.15rem/1.3 var(--f-display)}
+.fact .small{font-size:.92rem;color:var(--muted)}
+.countdown{display:inline-block;font-size:.9rem;color:var(--muted);border:1px solid var(--gold-soft);border-radius:999px;padding:2px 14px;font-variant-numeric:tabular-nums}
+.divider{display:flex;align-items:center;gap:12px;margin:26px 22px 0;color:var(--gold)}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--gold-soft)}
+
+/* RSVP */
+.rsvp{padding:18px 22px 26px}
+.rsvp h2{font:700 1.35rem/1.3 var(--f-display);text-align:center;margin:0 0 14px}
+.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+.choice{appearance:none;border:1.5px solid var(--gold-soft);background:#fff;color:var(--ink);
+  font:600 1rem var(--f-body);padding:12px 4px;border-radius:10px;cursor:pointer;transition:.15s}
+.choice:hover{border-color:var(--gold)}
+.choice[aria-pressed="true"][data-v="yes"]{background:var(--ok);border-color:var(--ok);color:#fff}
+.choice[aria-pressed="true"][data-v="no"]{background:var(--no);border-color:var(--no);color:#fff}
+.choice[aria-pressed="true"][data-v="maybe"]{background:var(--maybe);border-color:var(--maybe);color:#fff}
+.choice:focus-visible,.field input:focus-visible,.field textarea:focus-visible,.btn:focus-visible,.step button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.fields{display:grid;gap:12px}
+.field label{display:block;font-size:.9rem;font-weight:600;margin-bottom:4px}
+.field input,.field textarea{width:100%;font:400 1rem var(--f-body);color:var(--ink);background:#fff;
+  border:1.5px solid var(--gold-soft);border-radius:10px;padding:11px 12px}
+.field textarea{min-height:84px;resize:vertical}
+.field .err{color:var(--no);font-size:.85rem;min-height:0}
+.guests{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.step{display:flex;align-items:center;gap:10px}
+.step button{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--gold);background:#fff;color:var(--gold);font:700 1.3rem/1 var(--f-body);cursor:pointer}
+.step output{min-width:2ch;text-align:center;font:700 1.4rem var(--f-display);font-variant-numeric:tabular-nums}
+.btn{display:block;width:100%;border:0;border-radius:10px;padding:14px;font:700 1.1rem var(--f-body);cursor:pointer;text-align:center;text-decoration:none}
+.btn-primary{background:var(--ink);color:var(--paper);margin-top:6px}
+.btn-primary[disabled]{opacity:.6;cursor:wait}
+.formerr{color:var(--no);text-align:center;font-size:.95rem}
+.thanks{text-align:center;padding:10px 0}
+.thanks .script{font:400 2.2rem/1.2 var(--f-script);color:var(--gold)}
+.thanks p{margin:6px 0}
+.linkish{background:none;border:0;color:var(--muted);text-decoration:underline;font:inherit;cursor:pointer;margin-top:8px}
+
+/* actions, like the example's round buttons */
+.actions{display:flex;justify-content:center;gap:34px;padding:8px 22px 26px;border-top:1px solid var(--gold-soft)}
+.action{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem;padding-top:18px}
+.action .ic{width:64px;height:64px;border-radius:50%;background:#fff;border:1px solid var(--gold-soft);display:grid;place-items:center;box-shadow:0 3px 10px rgba(90,70,40,.08)}
+.action svg{width:30px;height:30px;stroke:var(--ink);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.contacts{text-align:center;font-size:.92rem;color:var(--muted);padding:0 22px 22px}
+.contacts a{white-space:nowrap;color:var(--ink);font-weight:600;text-decoration:none;direction:ltr;unicode-bidi:embed}
+footer{text-align:center;font:400 1.6rem var(--f-script);color:var(--gold);padding:14px 0 4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="card">
+  <header class="top">
+    <div class="script">Ella &amp; Noga</div>
+    <div class="eyebrow">בת מצווה</div>
+  </header>
+
+  <div class="photo"><img src="invite-pic.jpeg" alt="הזמנה לבת המצווה של נגה ואלה פוקס" width="1154" height="1600"></div>
+
+  <section class="text">
+    <h1>מתרגשים להזמין אתכם לבת המצווה של אלה ונגה 💜</h1>
+    <p class="lead">נחגוג לשתיהן יחד, ונשמח לראותכם בין אורחינו</p>
+    <div class="facts">
+      <div class="fact"><div class="lbl">מתי</div><div class="big">יום רביעי, 14.10.2026</div><div class="small">בשעה 19:00</div></div>
+      <div class="rule"></div>
+      <div class="fact"><div class="lbl">איפה</div><div class="big">החצר האחורית</div><div class="small">הוד השרון</div></div>
+    </div>
+    <span class="countdown" id="countdown"></span>
+  </section>
+
+  <div class="divider" aria-hidden="true">♥</div>
+
+  <section class="rsvp" id="rsvp">
+    <form id="form" novalidate>
+      <h2>האם אתם מגיעים?</h2>
+      <div class="choices" role="group" aria-label="האם אתם מגיעים">
+        <button type="button" class="choice" data-v="yes" aria-pressed="false">מגיעים</button>
+        <button type="button" class="choice" data-v="maybe" aria-pressed="false">אולי</button>
+        <button type="button" class="choice" data-v="no" aria-pressed="false">לא נוכל</button>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <label for="name">שם מלא *</label>
+          <input id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="phone">טלפון נייד *</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" style="text-align:right" placeholder="05X-XXXXXXX" required>
+        </div>
+        <div class="field guests" id="guestsRow">
+          <label for="guests" style="margin:0">כמה תגיעו?</label>
+          <div class="step">
+            <button type="button" id="minus" aria-label="פחות">−</button>
+            <output id="guests" aria-live="polite">1</output>
+            <button type="button" id="plus" aria-label="יותר">+</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="note">ברכה או הערה</label>
+          <textarea id="note" name="note" placeholder="כתבו ברכה לבנות 💜"></textarea>
+        </div>
+        <div class="formerr" id="formerr" role="alert"></div>
+        <button class="btn btn-primary" id="send" type="submit">שליחת אישור הגעה</button>
+      </div>
+    </form>
+    <div class="thanks" id="thanks" hidden>
+      <div class="script">תודה!</div>
+      <p id="thanksMsg"></p>
+      <button class="linkish" id="again" type="button">לעדכן את התשובה</button>
+    </div>
+  </section>
+
+  <nav class="actions">
+    <a class="action" id="waze" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+      ניווט עם Waze
+    </a>
+    <a class="action" id="cal" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>
+      הוספה ליומן
+    </a>
+  </nav>
+
+  <div class="contacts">
+    לשאלות: ענת <a href="tel:0547902085">054-7902085</a> · עדי <a href="tel:0526588236">052-6588236</a>
+  </div>
+  <footer>Ella &amp; Noga</footer>
+</main>
+
+<script>
+/* ---- Google Form wiring (filled in once the form exists) ---- */
+const FORM = {
+  action: "https://docs.google.com/forms/d/e/1FAIpQLScGO97JUhX0r6zbjp0fjGbXMir_K8pvHbg7kGvj1dSIrU4hwg/formResponse",
+  status: "entry.700643004", name: "entry.953198890", phone: "entry.869290863",
+  guests: "entry.1108815637", note: "entry.12761784"
+};
+const LABEL = { yes:"מגיעים", maybe:"אולי", no:"לא מגיעים" };
+
+const $ = s => document.querySelector(s);
+const EVENT = new Date("2026-10-14T19:00:00+03:00");
+const PLACE = "החצר האחורית הוד השרון";
+
+$("#waze").href = "https://waze.com/ul?q=" + encodeURIComponent(PLACE) + "&navigate=yes";
+$("#cal").href = "https://calendar.google.com/calendar/render?action=TEMPLATE"
+  + "&text=" + encodeURIComponent("בת המצווה של נגה ואלה")
+  + "&dates=20261014T160000Z/20261014T210000Z"
+  + "&location=" + encodeURIComponent("החצר האחורית, הוד השרון")
+  + "&details=" + encodeURIComponent("מתרגשים לחגוג איתכם 💜");
+
+(function countdown(){
+  const days = Math.ceil((EVENT - new Date()) / 864e5);
+  const el = $("#countdown");
+  if (days > 1) el.textContent = "עוד " + days + " ימים";
+  else if (days === 1) el.textContent = "מחר!";
+  else if (days === 0) el.textContent = "היום!";
+  else el.hidden = true;
+})();
+
+let status = "", guests = 1;
+const guestsOut = $("#guests"), guestsRow = $("#guestsRow");
+function setGuests(n){ guests = Math.max(1, Math.min(20, n)); guestsOut.textContent = guests; }
+$("#plus").onclick = () => setGuests(guests + 1);
+$("#minus").onclick = () => setGuests(guests - 1);
+
+document.querySelectorAll(".choice").forEach(b => b.onclick = () => {
+  status = b.dataset.v;
+  document.querySelectorAll(".choice").forEach(x => x.setAttribute("aria-pressed", x === b));
+  guestsRow.hidden = status === "no";
+  $("#formerr").textContent = "";
+});
+
+function cleanPhone(p){ return p.replace(/[^\d+]/g, ""); }
+
+$("#form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const err = $("#formerr");
+  const name = $("#name").value.trim(), phone = cleanPhone($("#phone").value), note = $("#note").value.trim();
+  if (!status) return err.textContent = "בחרו אם אתם מגיעים";
+  if (!name) { $("#name").focus(); return err.textContent = "נא למלא שם מלא"; }
+  if (phone.replace("+972","0").length < 9) { $("#phone").focus(); return err.textContent = "נא למלא מספר טלפון תקין"; }
+  err.textContent = "";
+  const count = status === "no" ? 0 : guests;
+
+  const send = $("#send"); send.disabled = true; send.textContent = "שולחים…";
+  try {
+    if (!FORM.action) throw new Error("form not configured");
+    const body = new URLSearchParams();
+    body.append(FORM.status, LABEL[status]);
+    body.append(FORM.name, name);
+    body.append(FORM.phone, phone);
+    body.append(FORM.guests, String(count));
+    body.append(FORM.note, note);
+    await fetch(FORM.action, { method:"POST", mode:"no-cors", body });
+    try { localStorage.setItem("rsvp", JSON.stringify({status, name, count})); } catch(_){}
+    showThanks(status, count);
+  } catch (x) {
+    err.textContent = "השליחה לא הצליחה. בדקו את החיבור לאינטרנט ונסו שוב.";
+  } finally {
+    send.disabled = false; send.textContent = "שליחת אישור הגעה";
+  }
+});
+
+function showThanks(s, count){
+  $("#form").hidden = true; $("#thanks").hidden = false;
+  $("#thanksMsg").textContent =
+    s === "yes" ? (count > 1 ? "רשמנו " + count + " אורחים. מחכים לראותכם!" : "רשמנו אתכם. מחכים לראותכם!")
+    : s === "maybe" ? "רשמנו שאולי תגיעו. נשמח לעדכון כשתדעו."
+    : "חבל שלא תוכלו להגיע. תודה שעדכנתם!";
+}
+$("#again").onclick = () => { $("#thanks").hidden = true; $("#form").hidden = false; };
+
+try { const prev = JSON.parse(localStorage.getItem("rsvp") || "null"); if (prev) showThanks(prev.status, prev.count); } catch(_){}
+</script>
+</body>
+</html>
